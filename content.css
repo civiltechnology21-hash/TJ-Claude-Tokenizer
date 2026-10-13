@@ -1,0 +1,93 @@
+/* Claude Tokenizer - banner above the chat box. Text only, no background. */
+
+.ct-banner {
+  --ct-main: rgba(255, 255, 255, 0.92);
+  --ct-dim: rgba(255, 255, 255, 0.72);
+  --ct-label: rgba(255, 255, 255, 0.5);
+  --ct-sep: rgba(255, 255, 255, 0.28);
+  --ct-dot: #e8956f;
+
+  position: fixed;
+  z-index: 2147483000;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -100%);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100vw - 24px);
+  overflow: hidden;
+  white-space: nowrap;
+
+  font: 400 12px/1.4 "Anthropic Serif", "Tiempos Text", Cambria, "Iowan Old Style",
+    "Palatino Linotype", "Times New Roman", Georgia, serif;
+  letter-spacing: 0.01em;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ct-main);
+
+  background: none;
+  border: 0;
+  box-shadow: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ct-banner.ct-light {
+  --ct-main: rgba(31, 30, 29, 0.9);
+  --ct-dim: rgba(31, 30, 29, 0.72);
+  --ct-label: rgba(31, 30, 29, 0.5);
+  --ct-sep: rgba(31, 30, 29, 0.28);
+  --ct-dot: #c15f3c;
+}
+
+/* before the chat box is found (or if it never is): bottom centre */
+.ct-banner.ct-fallback {
+  top: auto;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ct-dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ct-dot);
+}
+
+.ct-win {
+  color: var(--ct-main);
+}
+
+.ct-timer {
+  color: var(--ct-main);
+  font-weight: 500;
+}
+
+.ct-sep {
+  color: var(--ct-sep);
+}
+
+.ct-label {
+  color: var(--ct-label);
+  margin-right: -3px;
+}
+
+.ct-val {
+  color: var(--ct-dim);
+}
+
+/* nothing running: just a small grey dot and the word "idle" */
+.ct-banner.ct-idle .ct-active-only {
+  display: none;
+}
+
+.ct-banner.ct-idle .ct-dot {
+  background: var(--ct-label);
+}
+
+.ct-banner.ct-idle .ct-win {
+  color: var(--ct-label);
+}
