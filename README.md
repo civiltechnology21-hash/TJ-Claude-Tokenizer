@@ -18,6 +18,24 @@ It is a personal tracker, not an official Claude tool—and its token numbers ar
 - **Exports history to CSV.** Open the file in a spreadsheet app for your own analysis.
 - **Lets you tune the estimate.** Adjust character ratios, optional per-message overhead, banner visibility, and notifications.
 
+## Screenshots
+
+A quick look at the extension in action.
+
+### Extension popup
+
+The popup brings your current tracking cycle, estimates, and saved history together in one place.
+
+![Extension popup](<project view/extension-popup.png>)
+
+### Claude chat banner
+
+The banner keeps your tracking status visible above the chat composer while you use Claude.
+
+![Claude chat banner](<project view/claude-banner.png>)
+
+> Add your own screenshots to the `project view` folder using these exact filenames. The images are not included yet, so GitHub will display them once you add and push them.
+
 ## A quick note about accuracy
 
 Claude does not expose its actual token usage to this extension. The numbers shown here are calculated from text found in the page, using simple character ratios. They should be treated as rough estimates.
@@ -125,10 +143,13 @@ claude-tokenizer/
 ├── popup.html       # Toolbar popup interface
 ├── popup.css        # Popup styling
 ├── popup.js         # Popup display, settings, history, and CSV export
-└── icons/
-    ├── icon16.png
-    ├── icon48.png
-    └── icon128.png
+├── icons/
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+└── project view/
+    ├── extension-popup.png
+    └── claude-banner.png
 ```
 
 ## Privacy
